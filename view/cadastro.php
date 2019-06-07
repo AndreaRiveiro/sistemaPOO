@@ -8,9 +8,11 @@
 <select name="tipoPessoa">
     <option value="usuario">Usuários</option>
     <option value= "funcionario">Funcionário</option>
+</select>
 <input type="text" name="usuario" placeholder="Nome Usuário">
 <input type="password" name="senha" placeholder="Senha">
-</select>
+<input type="number" name="salario" placeholder="Salário">
+
 <button type = "submit">Enviar</button>
 
 </form>

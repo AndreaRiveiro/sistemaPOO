@@ -35,7 +35,7 @@ class Pessoas{
         $this->cpf = $cpf; //this = a prorpia classe
     }
 
-    public function cadastrarPessoa($con, $pessoa){
+    public function cadastrarPessoa($con, $pessoa, $tipoPessoa){
         try{
             $query = $con->prepare("Insert Into usuarios (nome, idaade, cpf) Values(?,?,?)");
             $query->execute([

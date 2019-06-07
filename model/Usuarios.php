@@ -27,15 +27,16 @@ class Usuarios extends Pessoas{
         $this->senha = $senha;
     }
 
-    public function cadastrarPessoa($con, $pessoa){
+    public function cadastrarPessoa($con, $pessoa, $tipoPessoa){
         try{
-            $query = $con->prepare("Insert Into usuarios (nome, idaade, cpf, usuario, senha) Values(?,?,?,?,?)");
+            $query = $con->prepare("Insert Into usuarios (nome, idaade, cpf, usuario, senha, tipo_pessoa) Values(?,?,?,?,?,?)");
             $query->execute([
                 $pessoa->getNome(),
                 $pessoa->getIdade(),
                 $pessoa->getCpf(),
                 $pessoa->getLogin(),
-                $pessoa->getSenha()
+                $pessoa->getSenha(),
+                $tipoPessoa
             ]);
             return $query;
         }catch(PDOException $e){
